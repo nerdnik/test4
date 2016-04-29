@@ -335,10 +335,10 @@ A $\textbf{right denominator set}$ is a multiplicatively closed subset satisfyin
     M & & N \\
     & L &\\};
   \path[-stealth]
-    (m-1-2) edge [dashed] node [left] {t} (m-2-1) 
-    		edge [dashed] node [right] {b} (m-2-3)
-    (m-2-1) edge node [left] {a} (m-3-2)
-    (m-2-3) edge node [right] {s} (m-3-2);
+    (m-1-2) edge [dashed] node [left] {$t$} (m-2-1) 
+    		edge [dashed] node [right] {$b$} (m-2-3)
+    (m-2-1) edge node [left] {$a$} (m-3-2)
+    (m-2-3) edge node [right] {$s$} (m-3-2);   %%%%%%%%%%%%% Put $$ around map letters
 \end{tikzpicture}
 \end{center}
 
@@ -408,13 +408,13 @@ To see this, take $K = L$ and $b_i = 1_L: : \rightarrow L$.  Then $(a_1, s_1) \s
     L1 & L2 & L3 \\
     M & & N \\};
   \path[-stealth]
-    (m-1-2) edge [dashed] node [left] {t} (m-2-1) 
-    		edge [dashed] node [right] {b} (m-2-3)
-    (m-2-1) edge node [left] {$b_1$} (m-3-1) edge node [right] {$b_2$} (m-3-2)
-    (m-2-3) edge node [left] {$c_2$} (m-3-2) edge node [right] {$c_2$} (m-3-3)
-    (m-3-1) edge node [left] {$s_1$} (m-4-1) edge node [left] {$a_1$} (m-4-3)
+    (m-1-2) edge [dashed] node [left,outer sep = 3pt] {$t$} (m-2-1) 
+    		edge [dashed] node [right,outer sep = 3pt] {$b$} (m-2-3)
+    (m-2-1) edge node [left] {$b_1$} (m-3-1) edge node [right, outer sep = 3pt] {$b_2$} (m-3-2)
+    (m-2-3) edge node [left,outer sep = 3pt] {$c_2$} (m-3-2) edge node [right] {$c_3$} (m-3-3)
+    (m-3-1) edge node [left] {$s_1$} (m-4-1) edge node [below,pos=.7] {$a_1$} (m-4-3)
     (m-3-2) edge node [left] {$s_2$} (m-4-1) edge node [right] {$a_2$} (m-4-3)
-    (m-3-3) edge node [right] {$s_3$} (m-4-1) edge node [right] {$a_3$} (m-4-3);
+    (m-3-3) edge node [below, pos = .7] {$s_3$} (m-4-1) edge node [right] {$a_3$} (m-4-3);
             \end{tikzpicture}
             \end{center}
 
@@ -431,8 +431,8 @@ To see this, take $K = L$ and $b_i = 1_L: : \rightarrow L$.  Then $(a_1, s_1) \s
 K & & J \\
 & L2 & \\};
 \path[-stealth]
-(m-1-2) edge [dashed] node [right] {u} (m-2-2)
-(m-2-2) edge node [left] {t} (m-3-1) edge node [right] {b} (m-3-3)
+(m-1-2) edge [dashed] node [right] {$u$} (m-2-2)
+(m-2-2) edge node [left,outer sep = 3pt] {$t$} (m-3-1) edge node [right,outer sep = 3pt] {$b$} (m-3-3)
 (m-3-1) edge node [left] {$b_2$} (m-4-2)
 (m-3-3) edge node [right] {$c_2$} (m-4-2);
    \end{tikzpicture}
@@ -456,14 +456,14 @@ By (D1), given $a_1, s_2$ we have $c,u$ from $K$ such that $a_1 \circ u = s_2 \c
 
 
 \begin{center}
-\begin{tikzpicture}
+\begin{tikzpicture}[outer sep = 3pt]
 \matrix (m) [matrix of math nodes, row sep=3em, column sep=3em]{
 & & K & & \\
 & L & & L' & \\
 M0 & & M1 & & M2 \\};
 \path[-stealth]
-(m-1-3) edge [dashed] node [left] {u} (m-2-2) 
-		edge [dashed] node [right] {c} (m-2-4)
+(m-1-3) edge [dashed] node [left] {$u$} (m-2-2) 
+		edge [dashed] node [right] {$c$} (m-2-4)
 (m-2-2) edge node [left] {$s_1$} (m-3-1) 
 		edge node [right] {$a_1$} (m-3-3)
 (m-2-4) edge node [left] {$s_2$} (m-3-3) 
@@ -491,7 +491,7 @@ Since $(a_i,s_i) \sim (a_i', s_i')$, there exist $b_i, b_i'$ from $Ji$ such that
 \
 
 \begin{center}
-\begin{tikzpicture}
+\begin{tikzpicture}[outer sep = 3pt]
   \matrix (m) [matrix of math nodes, row sep=3em,
     column sep=3em]{
     J1 & & & & J2 \\
@@ -508,7 +508,7 @@ Since $(a_i,s_i) \sim (a_i', s_i')$, there exist $b_i, b_i'$ from $Ji$ such that
   	   edge node [right] {$a_1$'} (m-3-3)
 (m-2-4) edge node [left] {$s_2$} (m-3-3)
     		edge node [ left] {$a_2$} (m-3-5)
-  (m-2-5) edge node [left] {$s_2$'} (m-3-3)
+  (m-2-5) edge node [below] {$s_2$'} (m-3-3)
   	   edge node [right] {$a_2$'} (m-3-5);
 \end{tikzpicture}
 \end{center}
@@ -522,7 +522,7 @@ By (D1) we get the compositions through $K, K'$ commute to $M1$:
 \
 
 \begin{center}
-\begin{tikzpicture}
+\begin{tikzpicture}[outer sep = 3pt]
   \matrix (m) [matrix of math nodes, row sep=3em,
     column sep=3em]{
     J1 & K & & K' & J2 \\
@@ -540,11 +540,11 @@ By (D1) we get the compositions through $K, K'$ commute to $M1$:
 (m-2-4) edge node [left] {$s_2$} (m-3-3)
     		edge node [ left] {$a_2$} (m-3-5)
   (m-2-5) edge node [left] {$s_2$'} (m-3-3)
-  	   edge node [right] {$a_2$'} (m-3-5)
-(m-1-2) edge [dashed] node [left] {c} (m-2-1)
-	edge [dashed] node [right] {u} (m-2-4)
-(m-1-4) edge [dashed] node [left] {c'} (m-2-2)
-	edge [dashed] node [right] {u'} (m-2-5);	   
+  	   edge node [right,pos = .6] {$a_2$'} (m-3-5)
+(m-1-2) edge [dashed] node [left] {$c$} (m-2-1)
+	edge [dashed] node [right, pos = .6] {$u$} (m-2-4)
+(m-1-4) edge [dashed] node [left, pos = .6] {$c'$} (m-2-2)
+	edge [dashed] node [right] {$u'$} (m-2-5);	   
 \end{tikzpicture}
 \end{center}
 
@@ -557,7 +557,7 @@ By (D1) again, we get the diagram commutes above $L1$ and through $L2'$ to $M1$:
 \
 
 \begin{center}
-\begin{tikzpicture}
+\begin{tikzpicture}[outer sep = 3pt]
   \matrix (m) [matrix of math nodes, row sep=3em,
     column sep=3em]{
     & I1 & & \tilde{I2} &\\
@@ -574,17 +574,17 @@ By (D1) again, we get the diagram commutes above $L1$ and through $L2'$ to $M1$:
    (m-2-5) edge node [left] {$b_2$} (m-3-4)
    		edge node [right] {$b_2$'} (m-3-5)
     (m-3-1) edge node [left] {$s_1$} (m-4-1)
-    		edge node [ left] {$a_1$} (m-4-3)
+    		edge node [ left,pos = .6] {$a_1$} (m-4-3)
   (m-3-2) edge node [left] {$s_1$'} (m-4-1)
   	   edge node [right] {$a_1$'} (m-4-3)
 (m-3-4) edge node [left] {$s_2$} (m-4-3)
-    		edge node [ left] {$a_2$} (m-4-5)
+    		edge node [ left,pos = .6] {$a_2$} (m-4-5)
   (m-3-5) edge node [left] {$s_2$'} (m-4-3)
   	   edge node [right] {$a_2$'} (m-4-5)
-(m-2-2) edge node [left] {c} (m-3-1)
-	edge  node [right] {u} (m-3-4)
-(m-2-4) edge node [left] {c'} (m-3-2)
-	edge node [right] {u'} (m-3-5);	   
+(m-2-2) edge node [left] {$c$} (m-3-1)
+	edge  node [right,pos = .6] {$u$} (m-3-4)
+(m-2-4) edge node [left,pos = .6] {$c'$} (m-3-2)
+	edge node [right] {$u'$} (m-3-5);	   
 \end{tikzpicture}
 \end{center}
 
@@ -597,7 +597,7 @@ By (D2), we get commutation above $L2'$:
 \
 
 \begin{center}
-\begin{tikzpicture}
+\begin{tikzpicture}[outer sep = 3pt]
   \matrix (m) [matrix of math nodes, row sep=3em,
     column sep=3em]{
  & I2 & \\
@@ -609,7 +609,7 @@ By (D2), we get commutation above $L2'$:
 (m-1-2) edge [dashed] node [left] {$\tilde{v	}$} (m-2-2)
 (m-2-2) edge node [left] {$\tilde{v_2}$} (m-3-1)
 	 edge node [right] {$\tilde{d_2}$} (m-3-3)
-(m-3-1) edge node [left] {c'} (m-4-2)
+(m-3-1) edge node [left] {$c'$} (m-4-2)
 (m-3-3) edge node [right] {$b_2$'} (m-4-2)
 (m-4-2) edge node [left] {$s_2$'} (m-5-2);   
 \end{tikzpicture}
@@ -622,7 +622,7 @@ At this point, we've constructed the following diagram so that is is all commuta
 \
 
 \begin{center}
-\begin{tikzpicture}
+\begin{tikzpicture}[outer sep = 3pt]
   \matrix (m) [matrix of math nodes, row sep=3em,
     column sep=3em]{
     & I1 & & I2 &\\
@@ -644,12 +644,12 @@ At this point, we've constructed the following diagram so that is is all commuta
   	   edge node [right] {$a_1$'} (m-4-3)
 (m-3-4) edge node [left] {$s_2$} (m-4-3)
     		edge node [ left] {$a_2$} (m-4-5)
-  (m-3-5) edge node [left] {$s_2$'} (m-4-3)
+  (m-3-5) edge node [left, outer sep = 5pt] {$s_2$'} (m-4-3)
   	   edge node [right] {$a_2$'} (m-4-5)
-(m-2-2) edge node [left] {c} (m-3-1)
-	edge  node [right] {u} (m-3-4)
-(m-2-4) edge node [left] {c'} (m-3-2)
-	edge node [right] {u'} (m-3-5);	   
+(m-2-2) edge node [left] {$c$} (m-3-1)
+	edge  node [right,pos = .6] {$u$} (m-3-4)
+(m-2-4) edge node [left, pos = .6, outer sep = 10pt] {$c'$} (m-3-2)
+	edge node [right] {$u'$} (m-3-5);	   
 \end{tikzpicture}
 \end{center}
 
@@ -662,7 +662,7 @@ By (D1), we can get commutation into $M0$ from $I1$ and $I2$ by considering $w \
 \
 
 \begin{center}
-\begin{tikzpicture}
+\begin{tikzpicture}[outer sep = 3pt]
   \matrix (m) [matrix of math nodes, row sep=3em,
     column sep=3em]{
  & & H & & \\
@@ -671,21 +671,17 @@ By (D1), we can get commutation into $M0$ from $I1$ and $I2$ by considering $w \
 L1 & L1' & & L2 & L2'\\
 M0 & & M1 & & M2\\};
     \path[-stealth]
-(m-1-3) edge [dashed] node [left] {w} (m-2-2)
-	edge [dashed] node [right] {e} (m-2-4)
+(m-1-3) edge [dashed] node [left] {$w$} (m-2-2)
+	edge [dashed] node [right] {$e$} (m-2-4)
 (m-2-2) edge node [left] {$v_1$} (m-3-1)
 	edge node [right] {$d_1$} (m-3-2)
 (m-2-4) edge node [left] {$v_2$} (m-3-4)
 	edge node [right] {$d_2$} (m-3-5)
-(m-3-1) edge node [left] {$b_1$'} (m-4-2) 
-(m-3-2) edge node [left] {c} (m-4-4)
-(m-3-4) edge node [right] {u'} (m-4-2)
-(m-3-5) edge node [right] {$b_2$} (m-4-4)
-(m-3-2) edge node [left] {c} (m-4-1)
-	edge node [right] {u} (m-4-4)
-(m-3-4) edge node [left] {c'} (m-4-2)
-	edge node [right] {u'} (m-4-5)
-(m-3-1) edge node [left] {$b_1$} (m-4-1)
+(m-3-2) edge node [left, pos = .3] {c} (m-4-1)
+	edge node [right, pos = .3] {$u$} (m-4-4)
+(m-3-4) edge node [left, pos = .3] {$c'$} (m-4-2)
+	edge node [right, pos = .2] {$u'$} (m-4-5)
+(m-3-1) edge node [left, pos =.8] {$b_1$} (m-4-1)
 	edge node [right] {$b_1$'} (m-4-2)
 (m-3-5) edge node [left] {$b_2$} (m-4-4)
 	edge node [right] {$b_2$'} (m-4-5)
@@ -707,7 +703,7 @@ While $H \rightarrow I_2 \rightarrow M_0 \in S$, we could fail to have commuting
 \
 
 \begin{center}
-\begin{tikzpicture}
+\begin{tikzpicture}[outer sep = 3pt]
   \matrix (m) [matrix of math nodes, row sep=3em,
     column sep=3em]{
  & & H & & \\
@@ -722,8 +718,8 @@ While $H \rightarrow I_2 \rightarrow M_0 \in S$, we could fail to have commuting
 (m-2-4) edge node [left] {$v_2$} (m-3-4)
 	edge node [right] {$d_2$} (m-3-5)
 (m-3-1) edge node [left] {$b_1$'} (m-4-2) 
-(m-3-2) edge node [left] {c} (m-4-4)
-(m-3-4) edge node [right] {u'} (m-4-2)
+(m-3-2) edge node [left, pos = .3] {c} (m-4-4)
+(m-3-4) edge node [right, pos = .3] {u'} (m-4-2)
 (m-3-5) edge node [right] {$b_2$} (m-4-4);
 \end{tikzpicture}
 \end{center}
@@ -747,7 +743,7 @@ Now all paths $H'' \rightarrow M_2$ are equal and all paths $H'' \rightarrow M_0
 \
 
 \begin{center}
-\begin{tikzpicture}
+\begin{tikzpicture}[outer sep = 3pt]
   \matrix (m) [matrix of math nodes, row sep=3em,
     column sep=3em]{
     & & H'' & & \\
@@ -766,13 +762,9 @@ M0 & & M1 & & M2\\};
 	edge node [right] {$d_1$} (m-5-2)
 (m-4-4) edge node [left] {$v_2$} (m-5-4)
 	edge node [right] {$d_2$} (m-5-5)
-(m-5-1) edge node [left] {$b_1$'} (m-6-2) 
-(m-5-2) edge node [left] {c} (m-6-4)
-(m-5-4) edge node [right] {u'} (m-6-2)
-(m-5-5) edge node [right] {$b_2$} (m-6-4)
 (m-5-2) edge node [left] {c} (m-6-1)
-	edge node [right] {u} (m-6-4)
-(m-5-4) edge node [left] {c'} (m-6-2)
+	edge node [right, pos = .3] {u} (m-6-4)
+(m-5-4) edge node [left, pos = .3] {c'} (m-6-2)
 	edge node [right] {u'} (m-6-5)
 (m-5-1) edge node [left] {$b_1$} (m-6-1)
 	edge node [right] {$b_1$'} (m-6-2)
@@ -795,7 +787,7 @@ Thus we have
 
 \
 \begin{center}
-\begin{tikzpicture}
+\begin{tikzpicture}[outer sep = 3pt]
  \matrix (m) [matrix of math nodes, row sep=3em,
     column sep=3em]{
 & & H'' & & \\
@@ -809,8 +801,8 @@ M0 & & & & M2 \\};
 (m-2-2) edge node [left] {$d_1$} (m-3-2)
 (m-2-4) edge node [right] {$v_2$} (m-3-4)
 (m-3-2) edge node [left] {$u$} (m-4-1)
-	edge node [right] {$c$} (m-4-4)
-(m-3-4) edge node [left] {$u'$} (m-4-2)
+	edge node [right, pos = .3] {$c$} (m-4-4)
+(m-3-4) edge node [left, pos = .3] {$u'$} (m-4-2)
 	edge node [right] {$c'$} (m-4-5)
 (m-4-1) edge node [left] {$s_1$} (m-5-1)
 (m-4-2) edge node [right] {$s_1$'} (m-5-1)
