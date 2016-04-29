@@ -87,24 +87,7 @@ Our setting is the category of complexes $\textbf{C(M)}$ of an additive category
 
 \section{Triangulated Categories}
 
-A $\textbf{T-additive category}$ is an additive category $\textbf{K}$ with an additive automorphsim $\textbf{T}$, called the "translation" or "shift" or "suspension".  A $\textbf{T-additive functor}$ is an additive functor $\textbf{F}: K \rightarrow L$ with a natural isomorphism $\xi: F \circ T_K \rightarrow T_L \circ F$.  It follows that a $\textbf{morphism of T-additive functors}$ is a natural transformation $\eta: (F,\xi) \rightarrow (G, \nu)$ with commutative diagram
-
-\
-
-
-
-\begin{tikzpicture}
-  \matrix (m) [matrix of math nodes,row sep=3em,column sep=4em,minimum width=2em]
-  {
-     F \circ T_K & \xi \circ F \circ T_K \\
-     G \circ T_L & \nu \circ G \circ T_L \\};
-  \path[-stealth]
-    (m-1-1) edge node [left] {$\eta$} (m-2-1)
-            edge node [above] {$\xi $} (m-1-2)
-    (m-2-1) edge node [above] {$\nu \circ \eta$} (m-2-2)
-    (m-1-2) edge node [right] {$\eta \circ \xi$} (m-2-2);
-            
-\end{tikzpicture}
+A $\textbf{T-additive category}$ is an additive category $\textbf{K}$ with an additive automorphsim $\textbf{T}$, called the "translation" or "shift" or "suspension".  A $\textbf{T-additive functor}$ is an additive functor $\textbf{F}: K \rightarrow L$ with a natural isomorphism $\xi: F \circ T_K \rightarrow T_L \circ F$.  It follows that a $\textbf{morphism of T-additive functors}$ is a natural transformation $\eta: (F,\xi) \rightarrow (G, \nu)$.
 
 \
 
@@ -112,7 +95,7 @@ A $\textbf{triangle}$ is a diagram $L \xrightarrow{\alpha} M \xrightarrow{\beta}
 
 \
 
-
+\begin{center}
 \begin{tikzpicture}
   \matrix (m) [matrix of math nodes,row sep=3em,column sep=4em,minimum width=2em]
   {
@@ -130,10 +113,11 @@ A $\textbf{triangle}$ is a diagram $L \xrightarrow{\alpha} M \xrightarrow{\beta}
     (m-2-2) edge node [above] {$\beta'$} (m-2-3)
     (m-2-3) edge node [above] {$\gamma'$} (m-2-4);     
 \end{tikzpicture}
+\end{center}
 
 
 
-A $\textbf{triangulated category}$ is a T-additive category with a set of $\textbf{distinguished triangles*}$, and a $\textbf{triangulated functor}$ is a T-additive functor that sends distinguished triangles to distinguished triangles.
+A $\textbf{triangulated category}$ is a T-additive category with a set of $\textbf{distinguished triangles}$, and a $\textbf{triangulated functor}$ is a T-additive functor that sends distinguished triangles to distinguished triangles.
 
 \
 
@@ -149,10 +133,11 @@ A set of distinguished triangles must satisfy the following axioms:
 
 \
 
-(TR3) If $L \xrightarrow{\alpha} M \xrightarrow{\beta} N \xrightarrow{\gamma} T(L)$ and $L' \xrightarrow{\alpha'} M' \xrightarrow{\beta'} N' \xrightarrow{\gamma'} T(L')$ are distinguished triangles and $\phi: L \rightarrow L', \psi: M \rightarrow M'$ are such that $\psi \circ \alpha = \alpha' \circ \phi$, there exists a $\chi: N \rightarrow N'$ such that we get a morphism of triangles.  
+(TR3) If $L \xrightarrow{\alpha} M \xrightarrow{\beta} N \xrightarrow{\gamma} T(L)$ and $L' \xrightarrow{\alpha'} M' \xrightarrow{\beta'} N' \xrightarrow{\gamma'} T(L')$ are distinguished triangles and $\phi: L \rightarrow L', \psi: M \rightarrow M'$ are such that $\psi \circ \alpha = \alpha' \circ \phi$, there exists a $\chi: N \rightarrow N'$ such that we get a morphism of triangles:  
 
 \
 
+\begin{center}
 \begin{tikzpicture}
   \matrix (m) [matrix of math nodes,row sep=3em,column sep=4em,minimum width=2em]
   {
@@ -170,13 +155,15 @@ A set of distinguished triangles must satisfy the following axioms:
     (m-2-2) edge node [above] {$\beta'$} (m-2-3)
     (m-2-3) edge node [above] {$\gamma'$} (m-2-4);     
 \end{tikzpicture}
+\end{center}
 
 \
 
-(TR4) If $L \xrightarrow{\alpha} M \xrightarrow{\beta} N' \rightarrow T(L), M \xrightarrow{\gamma} N \xrightarrow{\lambda} L' \rightarrow T(M)$ and $L \xrightarrow{\gamma \circ \alpha} N \xrightarrow{\epsilon} M' \rightarrow T(L)$ are distinguished triangles, there exists a distinguished triangle $N' \xrightarrow{\phi} M' \xrightarrow{\psi} L' \rightarrow T(N')$ such that the following diagram commutes
+(TR4) If $L \xrightarrow{\alpha} M \xrightarrow{\beta} N' \rightarrow T(L), M \xrightarrow{\gamma} N \xrightarrow{\lambda} L' \rightarrow T(M)$ and $L \xrightarrow{\gamma \circ \alpha} N \xrightarrow{\epsilon} M' \rightarrow T(L)$ are distinguished triangles, there exists a distinguished triangle $N' \xrightarrow{\phi} M' \xrightarrow{\psi} L' \rightarrow T(N')$ such that the following diagram commutes:
 
 \
 
+\begin{center}
 \begin{tikzpicture}
   \matrix (m) [matrix of math nodes,row sep=3em,column sep=3em,minimum width=2em]
   {
@@ -210,12 +197,13 @@ A set of distinguished triangles must satisfy the following axioms:
  (m-4-2) edge [dashed] node [above] {$\psi$} (m-4-3)
  (m-4-3) edge [dashed] (m-4-4);
 \end{tikzpicture}
-
+\end{center}
 
 \
 
-- - - EXPLAINATION AND MOTIVATION OF TRIANGLE AXIOMS ; ***BIG IMPORTANT NOTE on 3: NOT FUNCTORIAL, DEEP CONSEQUENCES!!!***
-- - - - -
+% - - - EXPLAINATION AND MOTIVATION OF TRIANGLE AXIOMS ; ***BIG IMPORTANT NOTE on 3: NOT FUNCTORIAL, DEEP CONSEQUENCES!!!***
+
+The object $N$ of (T1) is called the cone on $\alpha: L \rightarrow M$.  An important note regarding (T3) is that the morphism $\chi$ on cones induced by the commutative square is not unique, which is a reflection that cones are not functorial.       
 
 \
 
@@ -223,19 +211,25 @@ A set of distinguished triangles must satisfy the following axioms:
 
 \
 
-We begin by defining the standard triangle associated to $\alpha$ when $\alpha: L \rightarrow M$ is a morphism of chain complexes in C(M).  Let $N[i] = L[i+1]\oplus M[i]$ and define the boundary operator $d_N^i: N^i \rightarrow N^{i+1} = $ 
+We begin by defining the standard triangle associated to $\alpha$ when $\alpha: L \rightarrow M$ is a morphism of chain complexes in C(M).  Let $N[i] = L[i+1]\oplus M[i]$ and define the boundary operator $d_N^i: N^i \rightarrow N^{i+1}$ by
 
 \
 
-INSERT ARRAY
+\[ \left[ \begin{array}{cc}
+-d^{i+1}_L & 0  \\
+
+\alpha^{i+1} & d^i_M  \end{array} \right]\] .
 
 \
 
-.  We call $\textbf{N}$ the $\textbf{mapping cone}$ of $\alpha$ and denote it by cone($\alpha$).  Let $\beta: M \rightarrow N$ be given by 
+We call $\textbf{N}$ the $\textbf{mapping cone}$ of $\alpha$ and denote it by cone($\alpha$).  Let $\beta: M \rightarrow N$ be given by 
 
 \
 
-INSERT ARRAY
+\[ \left[ \begin{array}{c}
+0 \\
+
+1_M  \end{array} \right]\] 
 
 \
 
@@ -243,11 +237,12 @@ INSERT ARRAY
  
  \
  
- INSERT ARRAY
+\[ \left[ \begin{array}{cc}
+1_{L[1]} & 0   \end{array} \right]\] .
  
  \
  
- .  We get a triangle $L \xrightarrow{\alpha} M \xrightarrow{\beta} N \xrightarrow{\gamma} L[1]$. Passing to K(M), we get the $\textbf{standard triangle}$ associated to $\alpha$ $L \xrightarrow{\overline{\alpha}} M \xrightarrow{\overline{\beta}} N \xrightarrow{\overline{\gamma}} L[1]$.  The category K(M) becomes a triangulated category with set of distinguished triangles those isomorphic in K(M) to standard triangles in K(M).  
+ We get a triangle $L \xrightarrow{\alpha} M \xrightarrow{\beta} N \xrightarrow{\gamma} L[1]$. Passing to K(M), we get the $\textbf{standard triangle}$ associated to $\alpha$ $L \xrightarrow{\overline{\alpha}} M \xrightarrow{\overline{\beta}} N \xrightarrow{\overline{\gamma}} L[1]$.  While the standard triangle associated to $\alpha$ is functorial in C(M), it is not in K(M).  The category K(M) becomes a triangulated category with set of distinguished triangles those isomorphic in K(M) to standard triangles in K(M).  
 
 \
 
@@ -255,26 +250,32 @@ One should now check that this set of distinguished triangles satisfies the nece
 
 \
 
-\section{Cohomological Functors (tangent, aside? understand use better):}
+\section{Cohomological Functors}
 
 \
 
-Now that we have triangulated categories, we can talk about special additive functors from triangulated categories to abelian categories.  A $\textbf{cohomological functor}$ is an additive functor $F: K \rightarrow M$ from a triangulated category to an abelian category such that every distinguished triangle $L \xrightarrow{\alpha} M \xrightarrow{\beta} N \xrightarrow{\gamma} T(L)$ in $K$ gets mapped to an exact sequence $F(L) \xrightarrow{F(\alpha)} F(M) \xrightarrow{F(\beta)} F(N)$. 
+Now that we have triangulated categories, we can talk about special additive functors from triangulated categories to abelian categories.  
 
 \
 
-Two propositions that are nice (? WHY):
-\
-
-1) $F: K \rightarrow M$ cohomological, $L \xrightarrow {\alpha} M \xrightarrow{\beta} N \xrightarrow{\gamma} T(L)$ distinguished in K.  Then get LES $ \hdots \rightarrow F(L[i]) \xrightarrow{F(\alpha[i])} F(M[i]) \xrightarrow{F(\beta[i[)} F(N[i]) \xrightarrow{F(\gamma[i])} F(L[i+1]) \xrightarrow{F(\alpha[i+1])} F(M[i+1]) \rightarrow \hdots$.
+A $\textbf{cohomological functor}$ is an additive functor $F: K \rightarrow M$ from a triangulated category to an abelian category such that every distinguished triangle $L \xrightarrow{\alpha} M \xrightarrow{\beta} N \xrightarrow{\gamma} T(L)$ in $K$ gets mapped to an exact sequence $F(L) \xrightarrow{F(\alpha)} F(M) \xrightarrow{F(\beta)} F(N)$. 
 
 \
 
-2) K, triangulated. $L \xrightarrow{\alpha} M \xrightarrow{\beta} N \xrightarrow{\gamma} T(L)$, distinguished.  Then $\beta \circ \alpha = 0$. Also for $P \in Ob(K)$, Hom( -, P): $K^{op} \rightarrow$ Ab and Hom(P,-): $K \rightarrow $Ab are cohomological.
+We have the following useful propositions:
+\
+
+\begin{proposition} $F: K \rightarrow M$ cohomological, $L \xrightarrow {\alpha} M \xrightarrow{\beta} N \xrightarrow{\gamma} T(L)$ distinguished in K.  Then get LES $ \hdots \rightarrow F(L[i]) \xrightarrow{F(\alpha[i])} F(M[i]) \xrightarrow{F(\beta[i[)} F(N[i]) \xrightarrow{F(\gamma[i])} F(L[i+1]) \xrightarrow{F(\alpha[i+1])} F(M[i+1]) \rightarrow \hdots$.
+\end{proposition}
 
 \
 
-EXPLAIN AND MOTIVATE. 
+\begin{proposition} K, triangulated. $L \xrightarrow{\alpha} M \xrightarrow{\beta} N \xrightarrow{\gamma} T(L)$, distinguished.  Then $\beta \circ \alpha = 0$. Also for $P \in Ob(K)$, Hom( -, P): $K^{op} \rightarrow$ Ab and Hom(P,-): $K \rightarrow $Ab are cohomological.
+\end{proposition}
+
+\
+
+EXPLAIN AND MOTIVATE. INCLUDE $H^0$ COHOMOLOGICAL?
 
 \section{Localization}
 
@@ -307,7 +308,14 @@ A $\textbf{right Ore localization of A with respect to S}$ is a pair $(A_S, Q)$ 
 
 \
 
-CONNECT TO PREVIOUS WEAK/STRICT, mention left/right, AND TO NEXT RIGHT DENOMINATOR SET.
+%CONNECT TO PREVIOUS WEAK/STRICT, mention left/right, AND TO NEXT RIGHT DENOMINATOR SET.
+
+One can show that an Ore localization is a strict localization, which in turn is a weak localization.  The important connection for us is that Ore localization about a subset $S$ exists if and only if $S$ is multiplicatively closed and a right denominator set.  We define these now.
+
+\
+
+Let $A$ be a category and $M, N \in Ob(A)$ and consider $A(M,N) = Hom_A(M,N)$.  A $\textbf{multiplicatively closed set S in A}$ is a subset $S(M,N) \subset A(M,N)$ that contains $1_M \in S(M,M)$ and for all $s \in S(L,M), t \in S(M,N)$ we have $t \circ s \in S(L,N)$.  
+
 
 \
 
@@ -317,26 +325,8 @@ A $\textbf{right denominator set}$ is a multiplicatively closed subset satisfyin
 
 (D1) (Right Ore condition) for all $a \in A, s \in S$, there exist  $b \in A, t \in S$ such that $a \circ t = s \circ b$
 
+\begin{center}
 \
-
-(D2) (Right cancellation condition) for all $a, b \in A, s \in S$ s.t. $s \circ a = s \circ b$, there exists a $t \in S$ such that $a \circ t = b \circ t$
-
-\
-
-*DIAGRAMS* OF THESE CONDITIONS
-
-
-\begin{tikzpicture}
-\matrix (m) [matrix of math nodes, row sep=3em, column sep=3em]{
-K \\
-M \\
-N \\
-L\\};
-\path[-stealth]
-(m-1-1) edge [dashed] node [left] {t} (m-2-1)
-(m-2-1) edge node [left] {a} (m-3-1) edge node [right] {b} (m-3-1)
-(m-3-1) edge node [left] {s} (m-4-1);
-\end{tikzpicture}
 
 \begin{tikzpicture}
   \matrix (m) [matrix of math nodes, row sep=3em,
@@ -349,26 +339,30 @@ L\\};
     		edge [dashed] node [right] {b} (m-2-3)
     (m-2-1) edge node [left] {a} (m-3-2)
     (m-2-3) edge node [right] {s} (m-3-2);
-            \end{tikzpicture}
+\end{tikzpicture}
+\end{center}
+
+(D2) (Right cancellation condition) for all $a, b \in A, s \in S$ s.t. $s \circ a = s \circ b$, there exists a $t \in S$ such that $a \circ t = b \circ t$
+
+\begin{center}
+\begin{tikzpicture}
+\matrix (m) [matrix of math nodes, row sep=3em, column sep=3em]{
+K \\
+M \\
+N \\
+L\\};
+\path[-stealth]
+(m-1-1) edge [dashed] node [left] {t} (m-2-1)
+(m-2-1) edge [bend right] node [left] {a} (m-3-1) edge [bend left] node [right] {b} (m-3-1)
+(m-3-1) edge node [left] {s} (m-4-1);
+\end{tikzpicture}
+\end{center}
 
 \
 
-SOME STORY AND EXPLANATIONS OF CONNECTING PROOF PIECES, TIE TOGETHER ORE AND DENOMINATOR SET, ROOFS, EQUIVALENCES; 
-
-
-\
-
-Let $A$ be a category and $M, N \in Ob(A)$ and consider $A(M,N) = Hom_A(M,N)$.  A $\textbf{multiplicatively closed set S in A}$ is a subset $S(M,N) \subset A(M,N)$ that contains $1_M \in S(M,M)$ and for all $s \in S(L,M), t \in S(M,N)$ we have $t \circ s \in S(L,N)$.  
-
-\
-
-IMPORTANT THEOREM (b/c it comes with a prooof!): 10.2.6: For $S \subset A$ a multiplicatively closed subset, right Ore localization $(A_S, Q)$ exists $\iff$ S is a right denominator set.  
-
-\
-
-% BIG PROOF. INCLUDE. (this is where well-defined based on choice of representative comes in) (this IS where we use Lemma 10.2.7, right Ore condition implies $\sim$ is an equivalence - use to define set A$_S$)
-
-\
+\begin{theorem}
+For $S \subset A$ a multiplicatively closed subset, right Ore localization $(A_S, Q)$ exists $\iff$ S is a right denominator set.  
+\end{theorem}
 
 \begin{proof}
 
@@ -376,27 +370,36 @@ We begin with proving that the existence of the right Ore localization $(A_S, Q)
 
 \
 
-Next we work out how S being a right denominator set implies the existence of the right Ore localization $(A_S, Q)$; this is the hard/longer direction (or really, its just fun with roofs!).  We start by defining the sets $A_S(M,N)$, composition between them and identity morphisms.  This is the start of what we need to show that $A_S$ is a category; we will still need to show associativity and identity properties of composition (? CHECK - AND DO. LTR).  Next we define $Q$ and show it is a functor (ALSO LTR).  Finally, we verify the axioms of right Ore localization, (L1), (L2), (L3), and (L4) (NEED TO PUT WORK INTO).   
+Next we work out how S being a right denominator set implies the existence of the right Ore localization $(A_S, Q)$; this is the hard/longer direction (or really, its just fun with roofs!).  We start by defining the sets $A_S(M,N)$, composition between them and identity morphisms.  This is the start of what we need to show that $A_S$ is a category; we will still need to show associativity and identity properties of composition.  Next we define $Q$, and will still need to show that it is a functor.  Finally, we verify the axioms of right Ore localization, (L1), (L2), (L3), and (L4).   
 
 \
 
-Consider $A \times S = \prod _{L \in Ob(A)} A(L,M) \times S(L,N)$ and consider the relation $(a_1, s_1) \sim (a_2, s_2)$ if there exist $b_1, b_2 \in S$ from $K$ such that $a_1 \circ b_1 = a_2 \circ b_2$ and $s_1 \circ b_1 = s_2 \circ b_2$.  
+Consider 
+
+\begin{center}
+$A \times S = \prod _{L \in Ob(A)} A(L,M) \times S(L,N)$
+\end{center}
+
+ and consider the relation $(a_1, s_1) \sim (a_2, s_2)$ if there exist $b_1, b_2 \in S$ from $K$ such that $a_1 \circ b_1 = a_2 \circ b_2$ and $s_1 \circ b_1 = s_2 \circ b_2$.  
 
 \
 
 
 We have the following lemma.
 
-If the right Ore condition is satisfied (D1), $\sim$ is an equivalence relation on $A_S$.
+\begin{lemma}
+If the right Ore condition is satisfied (D1), then $\sim$ is an equivalence relation on $A_S$.
+\end{lemma}
 
 \
 
-Take $K = L$ and $b_i = 1_L: : \rightarrow L$.  Then $(a_1, s_1) \sim (a_1,s_1)$.  Hence we have reflexivity.  Symmetry is clear.  Now we use the right Ore condition (D1) to get transitivity.  Suppose $(a_1, s_1) \sim (a_2, s_2)$ and $(a_2, s_2) \sim (a_3, s_3)$.
+To see this, take $K = L$ and $b_i = 1_L: : \rightarrow L$.  Then $(a_1, s_1) \sim (a_1,s_1)$.  Hence we have reflexivity.  Symmetry is clear.  Now we use the right Ore condition (D1) to get transitivity.  Suppose $(a_1, s_1) \sim (a_2, s_2)$ and $(a_2, s_2) \sim (a_3, s_3)$.
 
 \
 
 %*DIAGRAM*: L1, L2, L3 three triangles up from pair M, N connected by equivalences K and J. Note K,J to M so by (D1) get I.
 
+\begin{center}
 \begin{tikzpicture}
   \matrix (m) [matrix of math nodes, row sep=3em,
     column sep=3em]{
@@ -413,13 +416,14 @@ Take $K = L$ and $b_i = 1_L: : \rightarrow L$.  Then $(a_1, s_1) \sim (a_1,s_1)$
     (m-3-2) edge node [left] {$s_2$} (m-4-1) edge node [right] {$a_2$} (m-4-3)
     (m-3-3) edge node [right] {$s_3$} (m-4-1) edge node [right] {$a_3$} (m-4-3);
             \end{tikzpicture}
+            \end{center}
 
 \
 
 %*DIAGRAM*: by (D2) there exists a $u$ from H to I, get all paths $H \rightarrow M$ and $H \rightarrow N$ commute ( CHECK AGAIN) and all paths ending in M are in S. 
 
-\
 
+\begin{center}
 \begin{tikzpicture}
 \matrix (m) [matrix of math nodes, row sep=3em, column sep=3em]{
 & H & \\
@@ -432,15 +436,11 @@ K & & J \\
 (m-3-1) edge node [left] {$b_2$} (m-4-2)
 (m-3-3) edge node [right] {$c_2$} (m-4-2);
    \end{tikzpicture}
+   \end{center}
 
 \
 
-So we get $(a_1, s_1) \sim (a_3,s_3)$.  With this transitivity, we have that $\sim$ is an equivalence relation.
-
-
-\
-
-So we can quotient $A\times S$ by $\sim$ to define the set $A_S$.
+So we get $(a_1, s_1) \sim (a_3,s_3)$.  With this transitivity, we have that $\sim$ is an equivalence relation.  We can then quotient $A\times S$ by $\sim$ to define the set $A_S$. \qed
 
 \
 
@@ -448,10 +448,14 @@ We define composition of two morphisms $q_1 \in A_S(M_0,M_1), q_2 \in A_S(M_1,M_
 
 \
 
-%*DIAGRAM* OF MORPHISMS; highlight $a_1, s_2$, fill box with $c, u$ from $K$
+
+By (D1), given $a_1, s_2$ we have $c,u$ from $K$ such that $a_1 \circ u = s_2 \circ c$:
 
 \
+%*DIAGRAM* OF MORPHISMS; highlight $a_1, s_2$, fill box with $c, u$ from $K$
 
+
+\begin{center}
 \begin{tikzpicture}
 \matrix (m) [matrix of math nodes, row sep=3em, column sep=3em]{
 & & K & & \\
@@ -465,18 +469,16 @@ M0 & & M1 & & M2 \\};
 (m-2-4) edge node [left] {$s_2$} (m-3-3) 
 		edge node [right] {$a_2$} (m-3-5);
    \end{tikzpicture}
+   \end{center}
 
 \
 
-(caption) By (D1), given $a_1, s_2$ we have $c,u$ from $K$ such that $a_1 \circ c = s_2 \circ u$.
-
-\
 
 Let $q_2 \circ q_1 = \overline{(a_2 \circ c, s_1 \circ u)}$.  We now to check this is well-defined:
 
 \
 
-Suppose $q_i' = \overline{(a_i',s_i')}$ and choose $u', c'$.  We must show that $\overline{(a_2 \circ c, s_1 \circ u)} = \overline{(a_2' \circ u', s_1' \circ c')}$.  
+Suppose $q_i' = \overline{(a_i',s_i')}$ and choose $u', c'$.  We must show that $\overline{(a_2 \circ c, s_1 \circ u)} = \overline{(a_2' \circ c', s_1' \circ u')}$.  
 
 \
 
@@ -488,6 +490,7 @@ Since $(a_i,s_i) \sim (a_i', s_i')$, there exist $b_i, b_i'$ from $Ji$ such that
 
 \
 
+\begin{center}
 \begin{tikzpicture}
   \matrix (m) [matrix of math nodes, row sep=3em,
     column sep=3em]{
@@ -508,15 +511,17 @@ Since $(a_i,s_i) \sim (a_i', s_i')$, there exist $b_i, b_i'$ from $Ji$ such that
   (m-2-5) edge node [left] {$s_2$'} (m-3-3)
   	   edge node [right] {$a_2$'} (m-3-5);
 \end{tikzpicture}
+\end{center}
 
 \
 
 %*DIAGRAM*: include K, K' roof up between (L1,L2) and (L1',L2') by (D1);
 
-By (D1) we get the compositions through $K, K'$ commute to $M1$ (CHECK PHRASING)
+By (D1) we get the compositions through $K, K'$ commute to $M1$: 
 
 \
 
+\begin{center}
 \begin{tikzpicture}
   \matrix (m) [matrix of math nodes, row sep=3em,
     column sep=3em]{
@@ -541,15 +546,17 @@ By (D1) we get the compositions through $K, K'$ commute to $M1$ (CHECK PHRASING)
 (m-1-4) edge [dashed] node [left] {c'} (m-2-2)
 	edge [dashed] node [right] {u'} (m-2-5);	   
 \end{tikzpicture}
+\end{center}
 
 \
 
 %*DIAGRAM*:  include $I_1$ between $J_1$ and $K$ by (D1), include $\tilde{I_2}$ roof between K' and J2 by (D1),
 
-By (D1) again, we get the diagram commutes above $L1$ and through $L2'$ to $M1$
+By (D1) again, we get the diagram commutes above $L1$ and through $L2'$ to $M1$:
 
 \
 
+\begin{center}
 \begin{tikzpicture}
   \matrix (m) [matrix of math nodes, row sep=3em,
     column sep=3em]{
@@ -579,15 +586,17 @@ By (D1) again, we get the diagram commutes above $L1$ and through $L2'$ to $M1$
 (m-2-4) edge node [left] {c'} (m-3-2)
 	edge node [right] {u'} (m-3-5);	   
 \end{tikzpicture}
+\end{center}
 
 \
 
 %*DIAGRAM *by (D2) there is a $\tilde{v} \in S$ such that $I2 \xrightarrow{\tilde{v}} \tilde{I2}$ and paths $I2 \rightarrow L2'$ are equal
 
-By (D2), we get commutation above $L2'$
+By (D2), we get commutation above $L2'$:
 
 \
 
+\begin{center}
 \begin{tikzpicture}
   \matrix (m) [matrix of math nodes, row sep=3em,
     column sep=3em]{
@@ -604,7 +613,7 @@ By (D2), we get commutation above $L2'$
 (m-3-3) edge node [right] {$b_2$'} (m-4-2)
 (m-4-2) edge node [left] {$s_2$'} (m-5-2);   
 \end{tikzpicture}
-
+\end{center}
 
 \
 
@@ -612,6 +621,7 @@ At this point, we've constructed the following diagram so that is is all commuta
 
 \
 
+\begin{center}
 \begin{tikzpicture}
   \matrix (m) [matrix of math nodes, row sep=3em,
     column sep=3em]{
@@ -641,17 +651,54 @@ At this point, we've constructed the following diagram so that is is all commuta
 (m-2-4) edge node [left] {c'} (m-3-2)
 	edge node [right] {u'} (m-3-5);	   
 \end{tikzpicture}
+\end{center}
 
 \
 
 % *DIAGRAM* by (D1) choose $w \in A$ and $e \in S $from H to fill in $I_1 \rightarrow M_0 \leftarrow I_2$;
 
-By (D1), we can get commutation into $M0$ from $I1$ and $I2$ by considering $w \in A$ and $e \in S$ from $H$.  
+By (D1), we can get commutation into $M0$ from $I1$ and $I2$ by considering $w \in A$ and $e \in S$ from $H$:  
 
 \
 
-INSERT DIAGRAM H THROUGH MS
-
+\begin{center}
+\begin{tikzpicture}
+  \matrix (m) [matrix of math nodes, row sep=3em,
+    column sep=3em]{
+ & & H & & \\
+ & I1 & & I2 & \\
+ J1 & K & & K' & J2\\
+L1 & L1' & & L2 & L2'\\
+M0 & & M1 & & M2\\};
+    \path[-stealth]
+(m-1-3) edge [dashed] node [left] {w} (m-2-2)
+	edge [dashed] node [right] {e} (m-2-4)
+(m-2-2) edge node [left] {$v_1$} (m-3-1)
+	edge node [right] {$d_1$} (m-3-2)
+(m-2-4) edge node [left] {$v_2$} (m-3-4)
+	edge node [right] {$d_2$} (m-3-5)
+(m-3-1) edge node [left] {$b_1$'} (m-4-2) 
+(m-3-2) edge node [left] {c} (m-4-4)
+(m-3-4) edge node [right] {u'} (m-4-2)
+(m-3-5) edge node [right] {$b_2$} (m-4-4)
+(m-3-2) edge node [left] {c} (m-4-1)
+	edge node [right] {u} (m-4-4)
+(m-3-4) edge node [left] {c'} (m-4-2)
+	edge node [right] {u'} (m-4-5)
+(m-3-1) edge node [left] {$b_1$} (m-4-1)
+	edge node [right] {$b_1$'} (m-4-2)
+(m-3-5) edge node [left] {$b_2$} (m-4-4)
+	edge node [right] {$b_2$'} (m-4-5)
+(m-4-1) edge node [left] {$s_1$} (m-5-1)
+	edge node [right] {$a_1$} (m-5-3)
+(m-4-2) edge node [left] {$s_1$'} (m-5-1)
+	edge node [right] {$a_1$'} (m-5-3)
+(m-4-4) edge node [left] {$s_2$} (m-5-3)
+	edge node [right] {$a_2$} (m-5-5)
+(m-4-5) edge node [left] {$s_2$'} (m-5-3)
+	edge node [right] {$a_2$'} (m-5-5);
+\end{tikzpicture}
+\end{center}
 
 \
 
@@ -659,6 +706,7 @@ While $H \rightarrow I_2 \rightarrow M_0 \in S$, we could fail to have commuting
 
 \
 
+\begin{center}
 \begin{tikzpicture}
   \matrix (m) [matrix of math nodes, row sep=3em,
     column sep=3em]{
@@ -678,40 +726,107 @@ While $H \rightarrow I_2 \rightarrow M_0 \in S$, we could fail to have commuting
 (m-3-4) edge node [right] {u'} (m-4-2)
 (m-3-5) edge node [right] {$b_2$} (m-4-4);
 \end{tikzpicture}
+\end{center}
 
-\
 
 % INCLUDE SAME DIAGRAM, with highlighting: NOTE, $H \rightarrow I_2 \rightarrow M_0 \in S$ but could fail to commute in paths $H \rightarrow L_1'$ and $H \rightarrow L2$.
 
-\
-
-Noting that upon composing with $s_1'$ into $M0$, our paths from $H \rightarrow L_1'$ become equal, so by (D2) we get $w' \in S$ from $H'$ such that we now have commutation above $L_1'$.
-
+Noting that upon composing with $s_1'$ into $M_0$, our paths from $H \rightarrow L_1'$ become equal, so by (D2) we get $w' \in S$ from $H'$ such that we now have commutation above $L_1'$.
 
 \
 
-For the same reasons with composition with $s_2$, we get commutation above $L_2$ when mapping from $H''$. (CHECK, DOESN'T MAKE SENSE B/C DON'T HAVE COMMUTATION ABOVE $M1$ YET, DO WE?)
+For the same reasons with composition with $s_2$, we get commutation above $L_2$ when mapping from $H''$. (CHECK, DOESN'T MAKE SENSE TO MET YET.)
+
+\
+
+Now all paths $H'' \rightarrow M_2$ are equal and all paths $H'' \rightarrow M_0$ are equal and in S:
+
+
+%INCLUDE FINAL DIAGRAM: i.e. $(a_2 \circ c, s_1 \circ u) \sim (a_i' \circ c', s_1' \circ u')$.
+
+\
+
+\begin{center}
+\begin{tikzpicture}
+  \matrix (m) [matrix of math nodes, row sep=3em,
+    column sep=3em]{
+    & & H'' & & \\
+    & & H' & & \\
+ & & H & & \\
+ & I1 & & I2 & \\
+ J1 & K & & K' & J2\\
+L1 & L1' & & L2 & L2'\\
+M0 & & M1 & & M2\\};
+    \path[-stealth]
+(m-1-3) edge [dashed] node [left] {w''} (m-2-3)
+(m-2-3) edge [dashed] node [left] {w'} (m-3-3)
+(m-3-3) edge [dashed] node [left] {w} (m-4-2)
+	edge [dashed] node [right] {e} (m-4-4)
+(m-4-2) edge node [left] {$v_1$} (m-5-1)
+	edge node [right] {$d_1$} (m-5-2)
+(m-4-4) edge node [left] {$v_2$} (m-5-4)
+	edge node [right] {$d_2$} (m-5-5)
+(m-5-1) edge node [left] {$b_1$'} (m-6-2) 
+(m-5-2) edge node [left] {c} (m-6-4)
+(m-5-4) edge node [right] {u'} (m-6-2)
+(m-5-5) edge node [right] {$b_2$} (m-6-4)
+(m-5-2) edge node [left] {c} (m-6-1)
+	edge node [right] {u} (m-6-4)
+(m-5-4) edge node [left] {c'} (m-6-2)
+	edge node [right] {u'} (m-6-5)
+(m-5-1) edge node [left] {$b_1$} (m-6-1)
+	edge node [right] {$b_1$'} (m-6-2)
+(m-5-5) edge node [left] {$b_2$} (m-6-4)
+	edge node [right] {$b_2$'} (m-6-5)
+(m-6-1) edge node [left] {$s_1$} (m-7-1)
+	edge node [right] {$a_1$} (m-7-3)
+(m-6-2) edge node [left] {$s_1$'} (m-7-1)
+	edge node [right] {$a_1$'} (m-7-3)
+(m-6-4) edge node [left] {$s_2$} (m-7-3)
+	edge node [right] {$a_2$} (m-7-5)
+(m-6-5) edge node [left] {$s_2$'} (m-7-3)
+	edge node [right] {$a_2$'} (m-7-5);
+\end{tikzpicture}
+\end{center}
+
+\
+
+Thus we have
+
+\
+\begin{center}
+\begin{tikzpicture}
+ \matrix (m) [matrix of math nodes, row sep=3em,
+    column sep=3em]{
+& & H'' & & \\
+& I1 & & I2 & \\
+& K && K' & \\
+L1 & L1' && L2 & L2' \\
+M0 & & & & M2 \\};
+    \path[-stealth]
+(m-1-3) edge node [left] {$w \circ w' \circ w''$} (m-2-2)
+	edge node [right] {$e \circ w' \circ w''$} (m-2-4)
+(m-2-2) edge node [left] {$d_1$} (m-3-2)
+(m-2-4) edge node [right] {$v_2$} (m-3-4)
+(m-3-2) edge node [left] {$u$} (m-4-1)
+	edge node [right] {$c$} (m-4-4)
+(m-3-4) edge node [left] {$u'$} (m-4-2)
+	edge node [right] {$c'$} (m-4-5)
+(m-4-1) edge node [left] {$s_1$} (m-5-1)
+(m-4-2) edge node [right] {$s_1$'} (m-5-1)
+(m-4-4) edge node [left] {$a_2$} (m-5-5)
+(m-4-5) edge node [right] {$a_2$'} (m-5-5);
+\end{tikzpicture}
+\end{center}
+
+\
+
+ and so $\overline{(a_2 \circ c, s_1 \circ u)} = \overline{(a_2'\circ c', s_1' \circ u')}$! 
 
 
 \
 
-Now all paths $H'' \rightarrow M_2$ are equal and all paths $H'' \rightarrow M0$ are equal and in S.
-
-\
-
-INCLUDE FINAL DIAGRAM: i.e. $(a_2 \circ c, s_1 \circ u) \sim (a_i' \circ c', s_1' \circ u')$.
-
-\
-
-We are done with proving well-defined composition.  Take the identity morphism to be $\overline{(1_M,1_M)}$.
-
-\
-
-One now must check the identity and associativity properties of this definition of composition.  
-
-\
-
-Define $Q: A \rightarrow A_s$ to be $Q(M) = M, Q(a) = \overline{(a,1_M)}$ for $a: M \rightarrow N$.  One must also chech that $Q$ is indeed a functor.
+So we are done with proving well-defined composition.  Take the identity morphism to be $\overline{(1_M,1_M)}$. One now must check the identity and associativity properties of this definition of composition.  Define $Q: A \rightarrow A_s$ to be $Q(M) = M, Q(a) = \overline{(a,1_M)}$ for $a: M \rightarrow N$.  One must also chech that $Q$ is indeed a functor.
 
 \
 
@@ -727,8 +842,9 @@ We now verify that the axioms of right Ore localization are satisfied.  We have 
 
 \
 
-KEY Prop (11.2.1?): If H: K $\rightarrow $M is a cohomological functor from a triangulated category K to an abelian category M and we consider $S = \{ s \in K | H(T^i(s)) $ is invertible for all $i \in \mathbb{Z}\}$.  Then $S$ is a left and right denominator set.  
-
+\begin{proposition}
+If H: K $\rightarrow $M is a cohomological functor from a triangulated category K to an abelian category M and we consider $S = \{ s \in K | H(T^i(s)) $ is invertible for all $i \in \mathbb{Z}\}$.  Then $S$ is a left and right denominator set.  
+\end{proposition}
 \
 
 \section{Localization of Triangulated categories:}
@@ -737,12 +853,16 @@ KEY Prop (11.2.1?): If H: K $\rightarrow $M is a cohomological functor from a tr
 
 \
 
-KEY Thm (11.2.2) If $S$ is the right denominator set associated to a cohomological functor on $K$, and $(K_S, Q)$ is the right Ore localization, then $K_S$ has a unique triangulated structure such that (i) Q is a triangulated functor (ii) if $F : K \rightarrow E$ is another triangulated functor such that $F(s)$ is invertible for all $s \in S$, then the localization $F_S: K_S \rightarrow E$ is triangulated.
+\begin{theorem}
+If $S$ is the right denominator set associated to a cohomological functor on $K$, and $(K_S, Q)$ is the right Ore localization, then $K_S$ has a unique triangulated structure such that (i) Q is a triangulated functor (ii) if $F : K \rightarrow E$ is another triangulated functor such that $F(s)$ is invertible for all $s \in S$, then the localization $F_S: K_S \rightarrow E$ is triangulated.
+\end{theorem}
 
 \
 
 \section{The Big Reveal...}
 
-STATE DEF OF DERIVED CATEGORY IN TERMS WE"VE JUST BUILT UP.  MAYBE STILL NEED TO SHOW $H^0$ IS COHOMOLOGICAL FUNCTOR.
+%STATE DEF OF DERIVED CATEGORY IN TERMS WE"VE JUST BUILT UP.  MAYBE STILL NEED TO SHOW $H^0$ IS COHOMOLOGICAL FUNCTOR.
+
+The set S(M) of quasi-isomorphisms in K(M) is equivalent to the set $\{s \in K(M) | H^i(s)$ is an isomorphism for all $i \}$, and the functor $H^0: K(M) \rightarrow M$ is cohomological.  Therefore, we can define the $\textbf{Derived Category}$ of M as the k-linear triangulated category that results from localization of K(M) about S(M); that is, \textbf{D(M)} = \textbf{$K(M)_{S(M)}$}.  
 
 \end{document}
